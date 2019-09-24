@@ -1,1 +1,35 @@
 
+[E]lasticsearch (ES) - like the google for searching data
+-optimizes searches
+-uses rest API to request the data
+-can use many diff databases
+-databases (e.g postgreSQL) are only used to store data
+
+[L]ogstash (LS) - data processing pipeline + data enrichment
+-process logs and sends to ES
+-data processing pipeline
+-data is handled as events (log file entries, ecommerce orders, chat messages, etc)
+-events are then processed by LS + shipped off to other destinations (ES, kafka queue, email message, HTTP endpoint, etc)
+-LS pipeline has 3 stages:
+1.inputs: can make use of a "plugin"  (e.g, a file, LS will read events from a file, sending events over HTTP, look up rows in a relational database, listen to a kafka queue, etc)
+2.filters: all about processing events; can parse CSV, XML, JSON format + data enrichment (looking up IP and resolving geolocation or look up data in a relational database)
+3.outputs (stashes): where events are sent. 
+-in a nutshell, LS receives events from 1 or more inputs, processes events, and sends them to stashes-
+-scalability > horizontally
+-designed in proprietart markup format similar to JSON
+-NOT only a markup language as we can add conditional statements and make a pipeline dynamic
+
+
+e.g  1:
+
+if we want
+
+
+
+
+[K]ibana (KBN)
+-used for visualizations and dashboards,
+metrics, KPIs
+-calls the data using rest API 
+
+
