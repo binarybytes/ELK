@@ -1,1 +1,1 @@
-/ELK/wiki
+https://github.com/binarybytes/ELK/wiki
